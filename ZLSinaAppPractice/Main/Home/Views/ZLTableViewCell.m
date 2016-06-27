@@ -49,7 +49,7 @@
         self.iconImageView=iconImageView;
         
         UILabel *nameLabel=[[UILabel alloc]init];
-        nameLabel.font=[UIFont systemFontOfSize:14.f];
+        nameLabel.font=[UIFont systemFontOfSize:16.f];
         [self.contentView addSubview:nameLabel];
         self.nameLabel=nameLabel;
         
@@ -61,7 +61,7 @@
         
         UILabel *contentLabel=[[UILabel alloc]init];
         contentLabel.numberOfLines=0;
-        contentLabel.font=[UIFont systemFontOfSize:15.f];
+        contentLabel.font=[UIFont systemFontOfSize:17.f];
         [self.contentView addSubview:contentLabel];
         self.contentLabel=contentLabel;
         
@@ -128,9 +128,8 @@
         [contentLabel makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(weakSelf.iconImageView.bottom).offset(10);
             make.left.equalTo(weakSelf).offset(10);
-//            make.width.equalTo([UIScreen mainScreen].bounds.size.width-20);
+            make.width.equalTo([UIScreen mainScreen].bounds.size.width-20);
         }];
-        contentLabel.preferredMaxLayoutWidth=[UIScreen mainScreen].bounds.size.width-20;
         [transmitButton makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(weakSelf.contentLabel.bottom).offset(10);
             make.width.equalTo([UIScreen mainScreen].bounds.size.width/3);
@@ -199,7 +198,7 @@
     
     
     
-    self.contentLabel.preferredMaxLayoutWidth=[UIScreen mainScreen].bounds.size.width-20;//此处为《标记》
+//    self.contentLabel.preferredMaxLayoutWidth=[UIScreen mainScreen].bounds.size.width-20;//此处为《标记》
     self.contentLabel.text=model.text;
     
     
@@ -215,4 +214,4 @@
 
 
 
-//问题2：界面卡顿严重，单元格在滑动的时候出现了明显的蹦跳，如何优化？
+
